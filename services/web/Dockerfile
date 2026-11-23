@@ -14,12 +14,6 @@ FROM ${NGINX_IMAGE} AS base
 #   CVE-2026-123007, CVE-2026-123633), fixed in 1.30.7. It comes from nginx.org's own Alpine
 #   repository, like the base image's 1.30.6 (its signing key is already in the image), with the
 #   base image's modules at the same version, because each module requires its exact nginx.
-USER 0
-RUN apk add --no-cache brotli-libs=1.2.1-r0 \
- && apk add --no-cache --repository https://nginx.org/packages/alpine/v3.24/main \
-      nginx=1.30.7-r1 nginx-module-geoip=1.30.7-r1 nginx-module-image-filter=1.30.7-r1 \
-      nginx-module-njs=1.30.7.1.0.2-r1 nginx-module-xslt=1.30.7-r1
-USER 101
 
 # ---- test: the runtime setup plus a fake API; `docker build --target test` then run it ----
 FROM base AS test
