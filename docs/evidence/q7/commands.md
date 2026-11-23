@@ -15,7 +15,7 @@ holds a cluster credential. The workflows are in `.github/workflows/`:
 ArgoCD's Applications are in `shoplite-gitops/apps/`. Dev syncs automatically, with self-heal;
 prod syncs by hand.
 
-Most evidence is taken in GitHub and ArgoCD, in the browser. The terminal steps run in the
+Most of the evidence is taken in GitHub and ArgoCD, in the browser. The terminal steps run in the
 **lab terminal**, from `shoplite-app`, unless a step says otherwise. Screenshots are listed at
 the end of each part; the files go in this folder.
 
